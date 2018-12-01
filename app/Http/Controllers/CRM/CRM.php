@@ -1,9 +1,9 @@
 <?php
 
-namespace AeroLink\Http\Controllers\CRM;
+namespace aerolink\Http\Controllers\CRM;
 
 use Illuminate\Http\Request;
-use AeroLink\Http\Controllers\Controller;
+use aerolink\Http\Controllers\Controller;
 
 class CRM extends Controller
 {

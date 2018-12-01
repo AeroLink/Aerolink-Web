@@ -30,7 +30,7 @@ return [
     ],
 
     'stripe' => [
-        'model' => AeroLink\User::class,
+        'model' => aerolink\User::class,
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],

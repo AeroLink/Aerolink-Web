@@ -1,6 +1,6 @@
 <?php
 
-namespace AeroLink\Http\Middleware;
+namespace aerolink\Http\Middleware;
 
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken as Middleware;
 

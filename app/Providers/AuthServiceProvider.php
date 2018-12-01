@@ -1,6 +1,6 @@
 <?php
 
-namespace AeroLink\Providers;
+namespace aerolink\Providers;
 
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
@@ -13,7 +13,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        'AeroLink\Model' => 'AeroLink\Policies\ModelPolicy',
+        'aerolink\Model' => 'aerolink\Policies\ModelPolicy',
     ];
 
     /**

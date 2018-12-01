@@ -1,12 +1,12 @@
 <?php
 
-namespace AeroLink\Http\Controllers\Recruitment;
+namespace aerolink\Http\Controllers\Recruitment;
 
 use Illuminate\Http\Request;
-use AeroLink\Http\Controllers\Controller;
+use aerolink\Http\Controllers\Controller;
 
-use AeroLink\Job;
-use AeroLink\Suffixes;
+use aerolink\Job;
+use aerolink\Suffixes;
 use Session;
 
 class Profiling extends Controller

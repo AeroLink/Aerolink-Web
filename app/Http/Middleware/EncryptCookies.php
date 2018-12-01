@@ -1,6 +1,6 @@
 <?php
 
-namespace AeroLink\Http\Middleware;
+namespace aerolink\Http\Middleware;
 
 use Illuminate\Cookie\Middleware\EncryptCookies as Middleware;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace AeroLink\Http\Middleware;
+namespace aerolink\Http\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\Auth;

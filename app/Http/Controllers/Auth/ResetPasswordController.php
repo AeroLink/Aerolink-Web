@@ -1,8 +1,8 @@
 <?php
 
-namespace AeroLink\Http\Controllers\Auth;
+namespace aerolink\Http\Controllers\Auth;
 
-use AeroLink\Http\Controllers\Controller;
+use aerolink\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 
 class ResetPasswordController extends Controller

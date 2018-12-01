@@ -1,6 +1,6 @@
 <?php
 
-namespace AeroLink;
+namespace aerolink;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;

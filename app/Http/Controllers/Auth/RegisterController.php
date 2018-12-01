@@ -1,9 +1,9 @@
 <?php
 
-namespace AeroLink\Http\Controllers\Auth;
+namespace aerolink\Http\Controllers\Auth;
 
-use AeroLink\User;
-use AeroLink\Http\Controllers\Controller;
+use aerolink\User;
+use aerolink\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -59,7 +59,7 @@ class RegisterController extends Controller
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
-     * @return \AeroLink\User
+     * @return \aerolink\User
      */
     protected function create(array $data)
     {

@@ -1,18 +1,20 @@
 <?php
 
-namespace AeroLink\Http\Controllers\Recruitment;
+namespace aerolink\Http\Controllers\Recruitment;
 
 use Illuminate\Http\Request;
-use AeroLink\Http\Controllers\Controller;
+use aerolink\Http\Controllers\Controller;
 
-use AeroLink\JobOpening;
+use aerolink\JobOpening;
 use Session;
 
 class jobOpportunityController extends Controller
 {
     public function getCareersDB(){
 
-        return  JobOpening::select('tbl_jobs.job_id', 'title', 'description', 'jobOpen')->join('tbl_jobs', 'tbl_jobs.job_id', 'tbl_job_limit.job_id' )->where([
+        return  JobOpening::select(
+            'aerolink.tbl_hr4_jobs.job_id', 'title', 'description', 'jobOpen')
+            ->join('aerolink.tbl_hr4_jobs', 'aerolink.tbl_hr4_jobs.job_id', 'aerolink.tbl_hr4_job_limit.job_id' )->where([
             ['jobOpen', '>', '0']
         ])->get();
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace AeroLink\Providers;
+namespace aerolink\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Broadcast;

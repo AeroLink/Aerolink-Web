@@ -154,11 +154,11 @@ return [
         /*
          * Application Service Providers...
          */
-        AeroLink\Providers\AppServiceProvider::class,
-        AeroLink\Providers\AuthServiceProvider::class,
-        // AeroLink\Providers\BroadcastServiceProvider::class,
-        AeroLink\Providers\EventServiceProvider::class,
-        AeroLink\Providers\RouteServiceProvider::class,
+        aerolink\Providers\AppServiceProvider::class,
+        aerolink\Providers\AuthServiceProvider::class,
+        // aerolink\Providers\BroadcastServiceProvider::class,
+        aerolink\Providers\EventServiceProvider::class,
+        aerolink\Providers\RouteServiceProvider::class,
 
     ],
 

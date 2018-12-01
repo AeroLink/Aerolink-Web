@@ -1,6 +1,6 @@
 <?php
 
-namespace AeroLink\Http\Controllers;
+namespace aerolink\Http\Controllers;
 
 use Illuminate\Http\Request;
 
