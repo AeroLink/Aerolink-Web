@@ -1,19 +1,24 @@
 <?php
 
-namespace AeroLink\Http\Controllers\Recruitment;
+namespace AeroLinkWeb\Http\Controllers\Recruitment;
 
 use Illuminate\Http\Request;
-use AeroLink\Http\Controllers\Controller;
+use AeroLinkWeb\Http\Controllers\Controller;
 
-use AeroLink\JobOpening;
+use AeroLinkWeb\JobOpening;
+use AeroLinkWeb\Models\JobPosted;
 use Session;
 
 class jobOpportunityController extends Controller
 {
     public function getCareersDB(){
 
-        return  JobOpening::select('tbl_jobs.job_id', 'title', 'description', 'jobOpen')->join('tbl_jobs', 'tbl_jobs.job_id', 'tbl_job_limit.job_id' )->where([
-            ['jobOpen', '>', '0']
+        return  JobPosted::select('aerolink.tbl_hr1_posting.id as job_id', 'aerolink.tbl_hr1_posting.title as t', 'aerolink.tbl_hr1_posting.description', 'jobOpen', 'aerolink.tbl_hr1_posting.salary',  'aerolink.tbl_hr1_posting.status', 'aerolink.tbl_hr1_posting.views')
+        ->join('aerolink.tbl_hr4_job_limit', 'aerolink.tbl_hr4_job_limit.id', 'aerolink.tbl_hr1_posting.jobPosted_id')
+        ->join('aerolink.tbl_hr4_jobs', 'aerolink.tbl_hr4_jobs.job_id', 'aerolink.tbl_hr4_job_limit.job_id')
+        ->where([
+            ['jobOpen', '>', '0'],
+            ['isPosted', '=', '1']
         ])->get();
 
     }

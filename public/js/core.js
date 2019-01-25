@@ -9,7 +9,7 @@ $(document).ready(() => {
                 $("#careerDrop").empty();
                 for (key in result.data) {
                     var stringcompo = result.data[key].jobOpen + (result.data[key].jobOpen > 1 ? " positions " : " position ") + "left";
-                    $("#careerDrop").append('<div class="col-4"><div class="card"><div class="card-header bg-success text-white"><strong>' + result.data[key].title + '</strong> &nbsp; [' + stringcompo + ']</div><div class="card-body">' + result.data[key].description + '</div><div class="card-footer"><div class="d-flex justify-content-end"><a class="btn btn-success btn-sm" href="/applyNowTrigger/' + result.data[key].job_id + '">Apply Now!</a></div></div></div>')
+                    $("#careerDrop").append('<tr><td>' + result.data[key].status + '</td><td>' + result.data[key].t + '</td><td>' + result.data[key].salary + '</td><td>' + stringcompo + '</td><td><a href="/applyNowTrigger/' + result.data[key].job_id +  '" class="btn btn-sm btn-success">Apply Now !</a></td></tr>')
                 }
             }
         );

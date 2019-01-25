@@ -154,11 +154,11 @@ return [
         /*
          * Application Service Providers...
          */
-        AeroLink\Providers\AppServiceProvider::class,
-        AeroLink\Providers\AuthServiceProvider::class,
-        // AeroLink\Providers\BroadcastServiceProvider::class,
-        AeroLink\Providers\EventServiceProvider::class,
-        AeroLink\Providers\RouteServiceProvider::class,
+        AeroLinkWeb\Providers\AppServiceProvider::class,
+        AeroLinkWeb\Providers\AuthServiceProvider::class,
+        // AeroLinkWeb\Providers\BroadcastServiceProvider::class,
+        AeroLinkWeb\Providers\EventServiceProvider::class,
+        AeroLinkWeb\Providers\RouteServiceProvider::class,
 
     ],
 
@@ -208,6 +208,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'CusAuth' => AeroLinkWeb\Http\Controllers\CustomAuth::class
 
     ],
 

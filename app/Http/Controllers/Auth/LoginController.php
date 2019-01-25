@@ -1,8 +1,8 @@
 <?php
 
-namespace AeroLink\Http\Controllers\Auth;
+namespace AeroLinkWeb\Http\Controllers\Auth;
 
-use AeroLink\Http\Controllers\Controller;
+use AeroLinkWeb\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class LoginController extends Controller

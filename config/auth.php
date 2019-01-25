@@ -67,7 +67,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => AeroLink\User::class,
+            'model' => AeroLinkWeb\User::class,
         ],
 
         // 'users' => [

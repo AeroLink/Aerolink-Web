@@ -6,6 +6,7 @@
 
 @section('styles')
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('css/CSX.css') }}" rel="stylesheet" type="text/css" />
 @endsection
 
 @section('navigation')
@@ -29,7 +30,23 @@
         </center>
         <br>
 
-        <div class="row" id="careerDrop">
+        <div class="d-flex justify-content-center">
+            <div class="table-responsive">
+                <table class="table table-hover table-bordered table-striped text-center">
+                    <thead class="thead-dark">
+                        <tr>
+                        <th scope="col">Status</th>
+                        <th scope="col">Career Name</th>
+                        <th scope="col">Monthly Salary</th>
+                        <th scope="col">Slots</th>
+                        <th scope="col">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="careerDrop">
+                        
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 @endsection

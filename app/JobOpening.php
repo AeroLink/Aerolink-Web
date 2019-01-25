@@ -1,12 +1,12 @@
 <?php
 
-namespace AeroLink;
+namespace AeroLinkWeb;
 
 use Illuminate\Database\Eloquent\Model;
 
 class JobOpening extends Model
 {
-    protected $table = "tbl_job_limit";
+    protected $table = "aerolink.tbl_hr4_job_limit";
 
     protected $fillable = ["id", "job_id", "job_limit", "jobOpen"];
 }

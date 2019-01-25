@@ -1,6 +1,6 @@
 <?php
 
-namespace AeroLink\Providers;
+namespace AeroLinkWeb\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

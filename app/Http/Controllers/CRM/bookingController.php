@@ -1,9 +1,9 @@
 <?php
 
-namespace AeroLink\Http\Controllers\CRM;
+namespace AeroLinkWeb\Http\Controllers\CRM;
 
 use Illuminate\Http\Request;
-use AeroLink\Http\Controllers\Controller;
+use AeroLinkWeb\Http\Controllers\Controller;
 
 class bookingController extends Controller
 {
