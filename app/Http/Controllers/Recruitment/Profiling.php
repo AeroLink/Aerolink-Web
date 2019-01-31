@@ -36,7 +36,13 @@ class Profiling extends Controller
     }
 
     public function processApplication(Request $request) {
+
+        $ResumeCV = $request->file('applicant_file');
         
+        if ($ResumeCV) {
+            $ResumeCV_filename = '/cvs/' . $ResumeCV->getClientOriginalName();
+            $ResumeCV->move(public_path('cvs'), $ResumeCV_filename);
+        }
         
         $pre = PreScreening::create([
             'Q1' => $request->input('Q1'),
@@ -64,19 +70,11 @@ class Profiling extends Controller
             ,'contact_number' => $request->input('contact_number')
             ,'educAttain' => $request->input('educ_attain')
             ,'prevSchool' => $request->input('prevSchool')
-            ,'resumeCV' => ''
+            ,'resumeCV' => $ResumeCV_filename
         ]);
-
-        $ResumeCV = $request->file('applicant_file');
-        
-        if ($ResumeCV) {
-            $ResumeCV_filename = '/cvs/' . $ResumeCV->getClientOriginalName();
-            $ResumeCV->move(public_path('cvs'), $ResumeCV_filename);
-        }
 
         $applicant = Applicants::where('id', $app->id)->update(array(
             'applicant_code' => 'APP000' . $app->id
-            ,'resumeCV' => $ResumeCV_filename
         ));
 
         Applications::create([
