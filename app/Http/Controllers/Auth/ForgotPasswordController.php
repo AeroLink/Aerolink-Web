@@ -1,8 +1,14 @@
 <?php
 
+<<<<<<< HEAD
 namespace AeroLinkWeb\Http\Controllers\Auth;
 
 use AeroLinkWeb\Http\Controllers\Controller;
+=======
+namespace aerolink\Http\Controllers\Auth;
+
+use aerolink\Http\Controllers\Controller;
+>>>>>>> 9aa4ed0bd81421195188f6d97b66fd84bf394da2
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
 
 class ForgotPasswordController extends Controller

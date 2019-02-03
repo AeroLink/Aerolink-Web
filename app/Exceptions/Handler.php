@@ -1,6 +1,10 @@
 <?php
 
+<<<<<<< HEAD
 namespace AeroLinkWeb\Exceptions;
+=======
+namespace aerolink\Exceptions;
+>>>>>>> 9aa4ed0bd81421195188f6d97b66fd84bf394da2
 
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;

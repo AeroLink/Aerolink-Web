@@ -1,6 +1,10 @@
 <?php
 
+<<<<<<< HEAD
 namespace AeroLinkWeb\Console;
+=======
+namespace aerolink\Console;
+>>>>>>> 9aa4ed0bd81421195188f6d97b66fd84bf394da2
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
