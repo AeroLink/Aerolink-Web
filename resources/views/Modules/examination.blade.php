@@ -45,7 +45,7 @@
                 </ul>
 
                 <button class="btn btn-lg btn-success form-control" type="submit">Submit</button>
-            </form>
+            </form> 
         </div>
     </div>
 @endsection

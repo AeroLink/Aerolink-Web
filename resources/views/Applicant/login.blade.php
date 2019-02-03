@@ -39,7 +39,7 @@
                             </div>
                         @endif
 
-                        <form method="POST" action="/Applicant/login">
+                        <form method="POST" action="/applicant/login">
                             @csrf
                             <div class="form-group">
                                 <label class="text-success"><b>APPLICANT EMAIL</b></label>

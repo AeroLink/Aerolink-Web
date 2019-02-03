@@ -17,8 +17,10 @@ class ExamController extends Controller
     }
     
     public function index($id){
-        $exam_ix = AppExam::where('applicantexam_id', $id)->get()[0]->exam_id;
-        $vals = [$exam_ix];
+        $exam = AppExam::where('applicantexam_id', $id)->get()[0];
+        $exam_id = $exam->exam_id;
+        $exam_ix = $exam->applicantexam_id;
+        $vals = [$exam_id];
         $questions = DB::select('EXEC getExamination ?', $vals);
         return view('Modules.examination', compact('questions', 'exam_ix'));
     }

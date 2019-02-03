@@ -16,7 +16,7 @@ class loginController extends Controller
 
     public function index() {
         if ( CusAuth::user() ) {
-            return redirect('/Applicant/');
+            return redirect('/applicant/');
         }
         
         return view('Applicant.login');
@@ -29,7 +29,7 @@ class loginController extends Controller
             $user = AppAccount::where('username', $request->input('email'))->get()[0];
             if(Hash::check($request->input('password'), $user->password)) {
                 CusAuth::Auth($user);
-                return redirect('/Applicant/');
+                return redirect('/applicant/');
             }
         } 
 
@@ -38,7 +38,7 @@ class loginController extends Controller
 
     public function executeLogout() {
         CusAuth::logout();
-        return redirect('/Applicant/');
+        return redirect('/applicant/');
     }
 
     
