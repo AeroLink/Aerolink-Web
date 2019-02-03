@@ -5,27 +5,40 @@ namespace AeroLinkWeb\Http\Controllers\Integration;
 use Illuminate\Http\Request;
 use AeroLinkWeb\Http\Controllers\Controller;
 use AeroLinkWeb\Models\Assestment;
+use AeroLinkWeb\Models\AppExam; 
 use DB;
+use Log;
 
 class ExamController extends Controller
 {
-    public function index(){
-        $questions = Assestment::select(
-            "aerolink.tbl_hr2_assessment.question",
-            DB::raw("
-            STUFF(( SELECT DISTINCT ',' + ( choice + '. ' + choice_description) FROM aerolink.tbl_hr2_evaluation 
-            WHERE question_id = aerolink.tbl_hr2_assessment.question_id 
-            ORDER BY ',' + ( choice + '. ' + choice_description) ASC FOR XML PATH ('')), 1, 1, '') as choices
-            "),
-            DB::raw("
-            (SELECT choice FROM aerolink.tbl_hr2_evaluation WHERE ischecked = 1 AND question_id = 
-            aerolink.tbl_hr2_assessment.question_id) as correct
-            ")
-        )->where("aerolink.tb_hr2_assessment.choice_id", 1)->get();
-
-        //dd($questions);
-        
-        return $questions;
-        //return view('Modules.examination', compact('questions'));
+    
+    public function __construct() {
+        $this->middleware('cusauth');
     }
+    
+    public function index($id){
+        $exam_ix = AppExam::where('applicantexam_id', $id)->get()[0]->exam_id;
+        $vals = [$exam_ix];
+        $questions = DB::select('EXEC getExamination ?', $vals);
+        return view('Modules.examination', compact('questions', 'exam_ix'));
+    }
+
+    public function submitExamination(Request $request) {
+        $res = $request->input('res');
+        $score = 0;
+        $increment = 0;
+        foreach($res as $r) {
+            $cb = DB::table('aerolink.tbl_hr2_evaluation')->select('isChecked')->where('choice_id',$r['CHOICE'])->get();
+            if($cb[0]->isChecked == '1') {
+                $score += 1;
+            }
+            $increment += 1;
+        }
+        
+        $finalScore = ($score / $increment) * 100;
+
+        $vals = [$request->input('exam_id'), $finalScore];
+        DB::select('EXEC HR1_UpdateExamination ?, ?', $vals);
+    }
+
 }

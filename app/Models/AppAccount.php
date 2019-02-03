@@ -11,6 +11,7 @@ class AppAccount extends Model
     protected $fillable = [
         'username',
         'password',
-        'app_id'
+        'app_id',
+        'feed_status_id'
     ];
 }

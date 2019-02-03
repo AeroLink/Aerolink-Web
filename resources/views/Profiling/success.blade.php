@@ -41,7 +41,7 @@
                 <br>
                 <br>
                 It would notify your schedules and current progress. 
-                You could use the Email that you've entered to the applicant form as the default credentials for email and password 
+                Check your Email Account Inbox to get your Applicant Portal Credentials.
                 Goodluck to your employment.
             </h3>
             

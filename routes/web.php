@@ -31,9 +31,10 @@ Route::group(['prefix' => 'profiling'], function() {
     Route::post('sendApplication', 'Recruitment\Profiling@processApplication');
 });
 
-Route::group(['prefix' => 'Applicant'], function(){
+Route::group(['prefix' => 'applicant'], function(){
     Route::get('/', 'ApplicantAccounts\ApplicantController@index');
-    Route::get('examination', 'Integration\ExamController@index');
+    Route::get('examination/{id}', 'Integration\ExamController@index');
+    Route::post('examination', 'Integration\ExamController@submitExamination');
     Route::get('login', 'ApplicantAccounts\loginController@index');
     Route::post('login', 'ApplicantAccounts\loginController@executeLogin');
     Route::get('logout', 'ApplicantAccounts\loginController@executeLogout');

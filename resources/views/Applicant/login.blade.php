@@ -43,7 +43,7 @@
                             @csrf
                             <div class="form-group">
                                 <label class="text-success"><b>APPLICANT EMAIL</b></label>
-                                <input type="email" name="email" class="form-control" required />
+                                <input type="text" name="email" class="form-control" required />
                             </div>
 
                             <div class="form-group">

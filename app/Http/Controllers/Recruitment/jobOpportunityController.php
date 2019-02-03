@@ -17,8 +17,7 @@ class jobOpportunityController extends Controller
         ->join('aerolink.tbl_hr4_job_limit', 'aerolink.tbl_hr4_job_limit.id', 'aerolink.tbl_hr1_posting.jobPosted_id')
         ->join('aerolink.tbl_hr4_jobs', 'aerolink.tbl_hr4_jobs.job_id', 'aerolink.tbl_hr4_job_limit.job_id')
         ->where([
-            ['jobOpen', '>', '0'],
-            ['isPosted', '=', '1']
+            ['isDeleted', '=', '0']
         ])->get();
 
     }

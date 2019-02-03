@@ -8,6 +8,8 @@ $(document).ready(function () {
             schedule_list(result.data);
         })
     }, 3000);
+
+
 });
 
 socket.on('receive_notif', function (data) {
@@ -31,6 +33,10 @@ function schedule_list(result) {
         var date = new Date(i.scheduled_date);
         $('#schedule-list').append("<div class='list-group-item'><h6>" + i.purpose + "</h6><small><i>" + date.toLocaleDateString("en-US", options) + "</i></small><br><br><i class='btn btn-xs text-white bg-" + checkStatus(i.status, date).c + "'>" + checkStatus(i.status, date).m + "</i></div>")
     });
+}
+
+function submitExam() {
+
 }
 
 function checkStatus(stats, sDate) {

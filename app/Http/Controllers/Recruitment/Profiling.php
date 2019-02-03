@@ -17,6 +17,9 @@ use AeroLinkWeb\Models\AppAccount;
 use Session;
 use DB;
 
+use Mail;
+
+
 class Profiling extends Controller
 {
     public function initiateProfiling(){
@@ -82,11 +85,24 @@ class Profiling extends Controller
             'jobPosted_id' => Session::get('jobID_apply')
         ]);
 
+        $rpwd = str_random(10);
         AppAccount::create([
             'app_id' => $app->id,
-            'username' => $request->input('email'),
-            'password' => \Hash::make($request->input('email'))
+            'username' => 'APP000' . $app->id,
+            'password' => \Hash::make($rpwd)
         ]);
+
+        $to_name = $request->input('firstname');
+        $to_email = $request->input("email");
+    
+        Mail::send('mails.application', [
+            'fullname' => $request->input('firstname'),
+            'username' => 'APP000' . $app->id,
+            'password' => $rpwd
+        ], function ($message) use ($to_name, $to_email) {
+            $message->to($to_email, $to_name)->subject('AeroLink Careers : Applicant Portal Credentials');
+            $message->from('aerolinkfms@gmail.com', 'AeroLink HR Department');
+        });
         
         return view('Profiling.success');
     }
